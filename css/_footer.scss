@@ -1,0 +1,57 @@
+.footer-contents {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 24px;
+
+    p {
+        margin: 0 40px;
+        font-size: 4em;
+        color: $link-color;
+
+        a {
+            display: block;
+        }
+    }
+}
+
+.thanking-wrap {
+    text-align: center;
+}
+
+.top-btn-wrap {
+    display: inline-block;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    text-align: center;
+    border: $link-color 1px solid;
+    z-index: 999;
+
+    @include mq() {
+        bottom: 50px;
+        right: 70px;
+    }
+}
+
+.top-btn {
+    font-size: 2em;
+    display: block;
+    
+    width: 30px;
+    height: 30px;
+    font-size: 1em;
+    position: relative;
+
+    @include mq() {
+        width: 50px;
+        height: 50px;
+    }
+    
+
+    i {
+        position: absolute;
+        top: 50%;
+        left: 51%;
+        transform: translate(-50%, -50%);
+    }
+}

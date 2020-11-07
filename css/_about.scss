@@ -1,0 +1,45 @@
+.about {
+    background-color: $background-color;
+    text-align: center;
+    position: relative;
+
+    &::after {
+        content: '';
+        width: 100%;
+        height: 80%;
+        background-color: #e6dcd8;
+        position: absolute;
+        bottom: -40px;
+        left: 0;
+        box-shadow: 0 0 10px rgba(0, 0, 0, .1);
+
+        @include mq() {
+            width: 60%;
+            bottom: -80px;
+        }
+    }
+}
+
+.about-contents {
+    margin: auto;
+    background-color: #fff;
+    padding: 48px 36px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, .1);
+    z-index: 1;
+    position: relative;
+
+    @include mq() {
+        width: 90%;
+    }
+
+    p {
+        text-align: left;
+    }
+}
+
+.about-contents-title {
+
+    &.second {
+        margin-top: 40px;
+    }
+}

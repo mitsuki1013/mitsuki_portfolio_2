@@ -1,0 +1,115 @@
+body {
+    font-family: $japanese;
+    color: $font-color;
+    font-size: 1.2em;
+    letter-spacing: 0.115em;
+    line-height: 1.5;
+}
+
+a {
+    color: $link-color;
+    font-family: $japanese;
+}
+
+p {
+    font-size: 0.7em;
+    letter-spacing: .02em;
+    line-height: 1.7em;
+
+    @include mq() {
+        font-size: 1em;
+    }
+}
+
+.container {
+    padding: 0 15px;
+    margin: auto;
+
+    @include mq() {
+        width: 720px;
+    }
+    
+    @include mq(lg) {
+        width: 960px;
+    }
+
+    @include mq(xl) {
+        width: 1140px;
+    }
+    
+}
+
+img {
+    width: 100%;
+    height: auto;
+}
+
+.section {
+    padding: 80px 0;
+
+    @include mq() {
+        padding: 120px 0;
+    }
+}
+
+.util-title {
+    font-size: 1.3em;
+    margin-bottom: 48px;
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+
+    @include mq() {
+        font-size: 2em;
+        margin-bottom: 60px;
+    }
+
+    &::before,
+    &::after {
+        content: '';
+        height: 1px;
+        background-color: $font-color;
+        flex-grow: 1;
+    }
+
+    &::before {
+        margin-right: 15px;
+    }
+
+    &::after {
+        margin-left: 15px;
+    }
+}
+
+.util-sub-title {
+    font-size: 1em;
+    position: relative;
+    margin-bottom: 36px;
+    display: inline-block;
+    padding-bottom: 1em;
+    font-weight: bold;
+
+    @include mq() {
+        font-size: 1.4em;
+        margin-bottom: 48px;
+    }
+
+    &::after {
+        content: '';
+        width: 50%;
+        height: 1px;
+        background-color: $font-color;
+        position: absolute;
+        left: 50%;
+        bottom: 0;
+        transform: translateX(-50%);
+    }
+}
+
+.util-link {
+    transition: opacity .4s;
+
+    &:hover {
+        opacity: .6;
+    }
+}

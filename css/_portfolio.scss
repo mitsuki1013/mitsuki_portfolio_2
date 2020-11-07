@@ -1,0 +1,224 @@
+.portfolio {
+    background-color: $background-color;
+    overflow: hidden;
+}
+
+.portfolio-description {
+    width: 80%;
+    margin: auto;
+    margin-bottom: 48px;
+}
+
+.portfolio-back {
+    position: relative;
+
+    &::after {
+        content: '';
+        background-color: #fff;
+        height: 100%;
+        width: 90%;
+        position: absolute;
+        top: 20%;
+        right: 0%;
+        z-index: 0;
+        box-shadow: 0 0 10px rgba(0, 0, 0, .1);
+
+        @include mq() {
+            width: 80%;
+        }
+    }
+}
+
+.portfolio-img-wrap {
+    position: relative;
+    overflow: hidden;
+    background-size: cover;
+    background-position: center center;
+    background-color: #161616;
+    width: 90%;
+    margin: auto;
+    margin-bottom: 100px;
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, .3);
+    z-index: 1;
+
+    @include mq() {
+        width: 80%;
+        margin-bottom: 180px;
+    }
+
+    &::before {
+        content: "";
+        display: block;
+        padding-top: 50%;
+    }
+
+    img {
+        position: absolute;
+        height: 100%;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+    }
+}
+
+.portfolio-section {
+    text-align: center;
+    display: none;
+
+    @include mq() {
+        
+    }
+
+    @include mq(lg) {
+        display: flex;
+        text-align: right;
+    }
+
+    &.section2 {
+        flex-flow: row-reverse;
+        margin-top: 60px;
+        margin-bottom: 40px;
+        
+        @include mq() {
+            margin-top: 100px;
+            margin-bottom: 80px;
+        }
+
+        @include mq(lg) {
+            text-align: left;
+        }
+    }
+
+    /*スマホ用レイアウト
+    ---------------------*/
+    &.is-sp {
+        display: block;
+
+        @include mq(lg) {
+            display: none;
+        }
+    }
+    /*-------------------*/
+}
+
+.portfolio-section-contents {
+    flex: 0 1 100%;
+    
+    @include mq(lg) {
+        margin-right: 36px;
+    }
+
+    &.section2 {
+
+        @include mq(lg) {
+            margin-left: 36px;
+        }
+    }
+}
+
+.portfolio-section-title {
+    display: inline-block;
+    position: relative;
+    padding-bottom: 1em;
+    margin-bottom: 24px;
+    font-weight: bold;
+    font-size: 1em;
+
+    @include mq() {
+        font-size: 1.1em;
+    }
+
+    @include mq(lg) {
+        margin-bottom: 12px;
+    }
+
+    &::after {
+        content: '';
+        width: 50%;
+        height: 1px;
+        background-color: $font-color;
+        position: absolute;
+        bottom: 0;
+        right: 50%;
+        transform: translateX(50%);
+
+        @include mq(lg) {
+            width: 40%;
+            right: 0;
+            transform: translateX(0%);
+        }
+    }
+
+    &.section2 {
+
+        &::after {
+
+            @include mq(lg) {
+                left: 0;
+            }
+            
+        }
+    }
+}
+
+.portfolio-description-contents {
+    text-align: left;
+
+    p {
+        margin-top: 1em;
+        padding-left: 1em;
+        text-indent: -1em;
+
+        @include mq() {
+            font-size: .8em;
+        }
+    }
+}
+
+.portfolio-section-img {
+    flex: 0 0 50%;
+    position: relative;
+    overflow: hidden;
+    background-size: cover;
+    background-position: center center;
+    background-color: #161616;
+    box-shadow: 0 0 20px rgba(0, 0, 0, .2);
+    width: 80%;
+    margin: auto;
+
+    @include mq(lg) {
+        width: 100%;
+    }
+
+    &::before {
+        content: "";
+        display: block;
+        padding-top: 50%;
+    }
+
+    img,
+    video {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+    }
+
+    video {
+        width: 115%;
+    }
+
+    img {
+        width: 102%;
+    }
+}
+
+.portfolio-link-wap {
+    text-align: center;
+}
+
+.portfolio-link {
+    font-size: 3em;
+    font-family: $portfolio-link;
+    display: block;
+}
